@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5014771bab524db68cc7c8402c75c9a0" Name="Diagram1">
+        <EntityTypeShape EntityType="Practise320_KudashovaAnnaModel.Academies" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Practise320_KudashovaAnnaModel.Animal_Kudashova" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Practise320_KudashovaAnnaModel.Application" Width="1.5" PointX="10.5" PointY="8.5" />
+        <EntityTypeShape EntityType="Practise320_KudashovaAnnaModel.Chair" Width="1.5" PointX="3" PointY="8.375" />
+        <EntityTypeShape EntityType="Practise320_KudashovaAnnaModel.ChairBoss" Width="1.5" PointX="7.5" PointY="6.25" />
+        <EntityTypeShape EntityType="Practise320_KudashovaAnnaModel.Control_Kudashova" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="Practise320_KudashovaAnnaModel.Countries" Width="1.5" PointX="9.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Practise320_KudashovaAnnaModel.Countries_Kudashova" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Practise320_KudashovaAnnaModel.Discipline" Width="1.5" PointX="5.25" PointY="13.375" />
+        <EntityTypeShape EntityType="Practise320_KudashovaAnnaModel.Engineer" Width="1.5" PointX="7.5" PointY="8.5" />
+        <EntityTypeShape EntityType="Practise320_KudashovaAnnaModel.Exam" Width="1.5" PointX="12.75" PointY="8.125" />
+        <EntityTypeShape EntityType="Practise320_KudashovaAnnaModel.Faculty" Width="1.5" PointX="0.75" PointY="8.75" />
+        <EntityTypeShape EntityType="Practise320_KudashovaAnnaModel.Flowers_Kudashova" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Practise320_KudashovaAnnaModel.Speciality" Width="1.5" PointX="5.25" PointY="3.25" />
+        <EntityTypeShape EntityType="Practise320_KudashovaAnnaModel.Student" Width="1.5" PointX="7.5" PointY="3.375" />
+        <EntityTypeShape EntityType="Practise320_KudashovaAnnaModel.Student10" Width="1.5" PointX="9.75" PointY="3.75" />
+        <EntityTypeShape EntityType="Practise320_KudashovaAnnaModel.sysdiagrams" Width="1.5" PointX="11.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Practise320_KudashovaAnnaModel.Teacher" Width="1.5" PointX="7.5" PointY="10.875" />
+        <EntityTypeShape EntityType="Practise320_KudashovaAnnaModel.Worker" Width="1.5" PointX="5.25" PointY="7.625" />
+        <EntityTypeShape EntityType="Practise320_KudashovaAnnaModel.Licium" Width="1.5" PointX="0.75" PointY="11.75" />
+        <AssociationConnector Association="Practise320_KudashovaAnnaModel.FK_Application_To_Discipline" />
+        <AssociationConnector Association="Practise320_KudashovaAnnaModel.FK_Application_To_Speciality" />
+        <AssociationConnector Association="Practise320_KudashovaAnnaModel.FK_Chair_To_Faculty" />
+        <AssociationConnector Association="Practise320_KudashovaAnnaModel.FK_Discipline_To_Chair" />
+        <AssociationConnector Association="Practise320_KudashovaAnnaModel.FK_Speciality_To_Chair" />
+        <AssociationConnector Association="Practise320_KudashovaAnnaModel.FK_Worker_To_Chair" />
+        <AssociationConnector Association="Practise320_KudashovaAnnaModel.FK_ChairBoss_Worker" />
+        <AssociationConnector Association="Practise320_KudashovaAnnaModel.FK_Exam_To_Discipline" />
+        <AssociationConnector Association="Practise320_KudashovaAnnaModel.FK_Engineer_Worker" />
+        <AssociationConnector Association="Practise320_KudashovaAnnaModel.FK_Exam_To_Student" />
+        <AssociationConnector Association="Practise320_KudashovaAnnaModel.FK_Exam_To_Worker" />
+        <AssociationConnector Association="Practise320_KudashovaAnnaModel.FK_Student_To_Speciality" />
+        <AssociationConnector Association="Practise320_KudashovaAnnaModel.FK_Teacher_Worker" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
