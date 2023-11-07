@@ -6,7 +6,8 @@
       xmlns:local="clr-namespace:SchoolKudasshova320.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="AddDepartmentPage">
+      Title="AddDepartmentPage"
+      Loaded ="Page_Loaded_1">
 
     <Grid>
 
@@ -37,12 +38,12 @@
         Grid.Row="0"
         />
         <ListView Grid.Column="1"
-    x:Name="ChairLv"
+    x:Name="AddDepartmentLv"
     Grid.ColumnSpan="5"
     Grid.Row="1"
     Grid.RowSpan="6"
-    ItemsSource="{Binding exams}" 
-                  SelectionChanged="">
+     
+                  SelectionChanged="ChairLv_SelectionChanged">
             <ListView.View>
                 <GridView>
                     <GridView.Columns>
@@ -51,24 +52,58 @@
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel>
-                                        <TextBlock Text="{Binding Discipline.Name}"/>
+                                        <TextBlock Text="{Binding Name}"/>
                                     </StackPanel>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
 
+                        <GridViewColumn Header ="Название дисциплины" Width="415">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding Faculty.Name }"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+
+                        </GridViewColumn>
                     </GridView.Columns>
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button x:Name="ExitBT" Grid.Column="2"
+        <Button x:Name="ExitBT" Grid.Column="1"
        Grid.Row="8"
-       Grid.ColumnSpan="3"
+       Grid.ColumnSpan="2"
        HorizontalAlignment="Center"
        VerticalAlignment="Center"
        Height="45"
         Width="200"
        Content="ВЕРНУТЬСЯ НА ГЛАВНУЮ" BorderBrush="Black" Click="ExitBT_Click" >
         </Button>
+
+        <StackPanel Grid.Column="3"
+                Grid.Row="7">
+            
+            <ComboBox x:Name="CBDisp"
+               DisplayMemberPath="Name"/>
+         
+            
+            <Button x:Name="AddDisp"
+                    Click="AddDisp_Click"
+                    Content="Добавить"
+                    />
+        </StackPanel>
+
+        <Button x:Name="DeleteBTN" Grid.Column="4"
+       Grid.Row="8"
+       Grid.ColumnSpan="3"
+       HorizontalAlignment="Center"
+       VerticalAlignment="Center"
+       Height="45"
+        Width="200"
+       Content="Удалить" BorderBrush="Black" Click="DeleteBTN_Click" >
+        </Button>
+        
     </Grid>
 </Page>

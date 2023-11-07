@@ -9,6 +9,124 @@
       Title="EngenerPage">
 
     <Grid>
-        <TextBlock Text="ingener"/>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <!--<Button x:Name="DeleteBT" Grid.Column="0"
+       Grid.Row="8"
+       Grid.ColumnSpan="3"
+       HorizontalAlignment="Center"
+       VerticalAlignment="Center"
+       Height="45"
+        Width="200"
+       Content="Удалить студента" BorderBrush="Black" Click="DeleteBT_Click" >
+        </Button>-->
+        <ListView Grid.Column="1"
+    x:Name="EngenerLv"
+    Grid.ColumnSpan="5"
+    Grid.Row="1"
+    Grid.RowSpan="6"
+    ItemsSource="{Binding workers}" SelectionChanged="EngenerLv_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Header ="ID" Width="250">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding ID}"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+
+                        <GridViewColumn Header ="Фамилия" Width="315">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding Fullname}"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+
+
+                        <GridViewColumn Header ="Оклад" Width="305">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding Salary}"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header ="Позиция" Width="305">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding Position}"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header ="Позиция" Width="305">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding Chair.Name}"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="ExitBT" Grid.Column="2"
+               Grid.Row="8"
+               Grid.ColumnSpan="3"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"
+               Height="45"
+                Width="200"
+               Content="ВЕРНУТЬСЯ НА ГЛАВНУЮ" BorderBrush="Black" Click="ExitBT_Click" >
+        </Button>
+        <Button x:Name="ADDBT" Grid.Column="5"
+               Grid.Row="8"
+               Grid.ColumnSpan="3"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"
+               Height="45"
+                Width="200"
+               Content="Добавить" BorderBrush="Black" Click="ADDBT_Click_1" />
+
+        <Button x:Name="dELBTN"      
+   Content="DELETE"
+   FontSize="20"
+   Grid.Column="1"
+   Grid.Row="7"
+   Grid.ColumnSpan="3"
+   Margin="10" Click="dELBTN_Click"/>
+
+
     </Grid>
 </Page>

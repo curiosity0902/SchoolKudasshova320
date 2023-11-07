@@ -28,6 +28,7 @@ namespace SchoolKudasshova320.DB
         public Nullable<int> ID_Chief { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
+        public byte[] Photo { get; set; }
     
         public virtual Chair Chair { get; set; }
         public virtual ChairBoss ChairBoss { get; set; }

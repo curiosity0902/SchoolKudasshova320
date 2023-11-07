@@ -6,7 +6,8 @@
       xmlns:local="clr-namespace:SchoolKudasshova320.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="ChairPage">
+      Title="ChairPage"
+      Loaded="Page_Loaded">
 
     <Grid>
 
@@ -37,11 +38,12 @@
     Grid.ColumnSpan="5"
     Grid.Row="1"
     Grid.RowSpan="6"
-    ItemsSource="{Binding chairs}" SelectionChanged="ChairLv_SelectionChanged">
+    ItemsSource="{Binding chairs}"
+    SelectionChanged="ChairLv_SelectionChanged">
             <ListView.View>
                 <GridView>
                     <GridView.Columns>
-                        <GridViewColumn Header ="Yfpdfybt " Width="440">
+                        <GridViewColumn Header ="Кафедра " Width="340">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel>
@@ -51,6 +53,15 @@
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
 
+                        <GridViewColumn Header ="Дисциплина " Width="340">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding discipline.Name}"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
                     </GridView.Columns>
                 </GridView>
             </ListView.View>

@@ -13,10 +13,10 @@ namespace SchoolKudasshova320.DB
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Practise320_KudashovaAnnaEntities : DbContext
+    public partial class Practise320_KudashovaAnnaEntities2 : DbContext
     {
-        public Practise320_KudashovaAnnaEntities()
-            : base("name=Practise320_KudashovaAnnaEntities")
+        public Practise320_KudashovaAnnaEntities2()
+            : base("name=Practise320_KudashovaAnnaEntities2")
         {
         }
     

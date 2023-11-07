@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using SchoolKudasshova320.DB;
 
 namespace SchoolKudasshova320.Pages
 {
@@ -20,9 +21,67 @@ namespace SchoolKudasshova320.Pages
     /// </summary>
     public partial class EngenerPage : Page
     {
+        public static List<Worker> workers { get; set; }
+        public static List<Chair> chairs { get; set; }
         public EngenerPage()
         {
             InitializeComponent();
+            chairs = new List<Chair>(DBConnection.practise320_KudashovaAnnaEntities.Chair.ToList());
+            workers = new List<Worker>(DBConnection.practise320_KudashovaAnnaEntities.Worker.ToList());
+            EngenerLv.ItemsSource = new List<Worker>(DBConnection.practise320_KudashovaAnnaEntities.Worker.ToList());
+
+            this.DataContext = this;
+          
         }
+
+        private void InitializeDataInPage()
+        {
+            chairs = new List<Chair>(DBConnection.practise320_KudashovaAnnaEntities.Chair.ToList());
+            workers = new List<Worker>(DBConnection.practise320_KudashovaAnnaEntities.Worker.ToList());
+            EngenerLv.ItemsSource = new List<Worker>(DBConnection.practise320_KudashovaAnnaEntities.Worker.ToList());
+        }
+
+        private void ExitBT_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
+
+        private void EngenerLv_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (EngenerLv.SelectedItem is Worker worker)
+            {
+                EngenerLv.SelectedItem = null;
+                NavigationService.Navigate(new WriteWorkerPage(worker));
+            }
+        }
+
+
+        private void ADDBT_Click_1(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new WorkersPage());
+
+        }
+
+        private void dELBTN_Click(object sender, RoutedEventArgs e)
+        {
+            if (EngenerLv.SelectedItem is Exam exam)
+            {
+                DBConnection.practise320_KudashovaAnnaEntities.Exam.Remove(exam);
+                DBConnection.practise320_KudashovaAnnaEntities.SaveChanges();
+                InitializeDataInPage();
+            }
+        }
+
+        //private void DeleteBT_Click(object sender, RoutedEventArgs e)
+        //{
+        //    if (EngenerLv.SelectedItem is Exam exam)
+        //    {
+        //        DBConnection.practise320_KudashovaAnnaEntities.Exam.Remove(exam);
+        //        DBConnection.practise320_KudashovaAnnaEntities.SaveChanges();
+        //    }
+        //}
+
+
     }
 }
+
