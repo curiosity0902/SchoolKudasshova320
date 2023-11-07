@@ -99,7 +99,7 @@
 
         </TextBox>
 
-        <TextBlock Grid.Column="0"
+        <!--<TextBlock Grid.Column="0"
                    Grid.Row="3"
                           Grid.ColumnSpan="2"
                           Width="120"
@@ -115,7 +115,7 @@
                           Grid.ColumnSpan="1"
                           Width="100"
                           HorizontalAlignment="Center"
-                          HorizontalContentAlignment="Center"/>
+                          HorizontalContentAlignment="Center"/>-->
         
         <Button x:Name="ExitBT" Grid.Column="1"
        Grid.Row="8"

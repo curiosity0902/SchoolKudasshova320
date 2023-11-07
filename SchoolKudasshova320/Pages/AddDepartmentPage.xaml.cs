@@ -81,7 +81,7 @@ namespace SchoolKudasshova320.Pages
                 var d = CBDisp.SelectedItem as Discipline;
                 disc.Name = d.Name;
                 disc.Volume = Convert.ToInt32(TBVolume.Text);
-                disc.ID = Convert.ToInt32(contextChair.ID);
+                disc.ID_Chair = contextChair.ID;
                 
                 DBConnection.practise320_KudashovaAnnaEntities.Discipline.Add(disc);
                 DBConnection.practise320_KudashovaAnnaEntities.SaveChanges();
