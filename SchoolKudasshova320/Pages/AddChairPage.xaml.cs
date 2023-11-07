@@ -25,7 +25,7 @@ namespace SchoolKudasshova320.Pages
     public partial class AddChairPage : Page
     {
         public static List<Discipline> disciplines { get; set; }
-        public static List<Worker> workers { get; set; }
+    
         public static List<Chair> chairs { get; set; }
 
         public static Discipline disc { get; set; }
@@ -40,7 +40,7 @@ namespace SchoolKudasshova320.Pages
             contextdisc = discipline;
             disc = discipline;
             DiscCB.ItemsSource = DBConnection.practise320_KudashovaAnnaEntities.Discipline.ToList();
-            workers = new List<Worker>(DBConnection.practise320_KudashovaAnnaEntities.Worker.ToList());
+           
             disciplines = new List <Discipline> (DBConnection.practise320_KudashovaAnnaEntities.Discipline.ToList());
             this.DataContext = this;
             //FacultyCB.ItemsSource = DbConnection.practise320_KudashovaAnnaEntities.Faculty.ToList();

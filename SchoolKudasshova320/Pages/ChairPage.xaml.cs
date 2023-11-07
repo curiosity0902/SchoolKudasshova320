@@ -30,7 +30,7 @@ namespace SchoolKudasshova320.Pages
         public ChairPage()
         {
             InitializeComponent();
-            ChairLv.ItemsSource = DBConnection.practise320_KudashovaAnnaEntities.Chair.ToList();
+            ChairLv.ItemsSource = DBConnection.practise320_KudashovaAnnaEntities.Chair.Where(x => x.ID == DBConnection.loginedUser.ID_Chair).ToList();
             //faculties = new List<Faculty>(DBConnection.practise320_KudashovaAnnaEntities.Faculty.ToList());
             //workers = new List<Worker>(DBConnection.practise320_KudashovaAnnaEntities.Worker.ToList());
             //chairs = DBConnection.practise320_KudashovaAnnaEntities.Chair.Where(x => x.ID == DBConnection.loginedUser.ID_Chair).ToList();

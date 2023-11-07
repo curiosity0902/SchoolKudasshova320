@@ -50,7 +50,7 @@
         <ComboBox x:Name="DiscCB" Grid.Column="6" Grid.Row="3"
                   Height="25"
                   DisplayMemberPath="Name"
-                  ItemsSource="{Binding disc.Discipline.Name}"
+                  Text="{Binding disc.Name}"
                   />
 
         <TextBlock Grid.Row="4"
