@@ -96,7 +96,23 @@
 
         </TextBox>
 
+        <TextBlock Grid.Column="0"
+                   Grid.Row="5"
+                          Grid.ColumnSpan="2"
+                          Width="120"
+                          HorizontalAlignment="Left"
+                   Text="Код"
+                           VerticalAlignment="Center"/>
 
+
+        <TextBox  x:Name="TBID"
+                          Grid.Column="0"
+                  Grid.Row="4"
+                          Grid.ColumnSpan="1"
+                          Width="100"
+                          HorizontalAlignment="Center"
+                          HorizontalContentAlignment="Center"/>
+        
         <Button x:Name="ExitBT" Grid.Column="1"
        Grid.Row="8"
        Grid.ColumnSpan="2"
