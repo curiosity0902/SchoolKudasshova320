@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="Хранилище Practise320_KudashovaAnnaModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище Practise320_KudashovaAnna2Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Academies">
           <Key>
             <PropertyRef Name="ID" />
@@ -37,13 +37,6 @@
           <Property Name="ID" Type="nvarchar" MaxLength="2" Nullable="false" />
           <Property Name="Name" Type="nvarchar(max)" />
           <Property Name="ID_Faculty" Type="nvarchar" MaxLength="2" />
-        </EntityType>
-        <EntityType Name="ChairBoss">
-          <Key>
-            <PropertyRef Name="ID_Worker" />
-          </Key>
-          <Property Name="ID_Worker" Type="int" Nullable="false" />
-          <Property Name="Standing" Type="int" />
         </EntityType>
         <EntityType Name="Control_Kudashova">
           <Key>
@@ -113,7 +106,7 @@
           <Property Name="Class" Type="nvarchar" MaxLength="40" />
         </EntityType>
         <!--Ошибки, обнаруженные при создании:
-предупреждение 6002: В таблице или представлении "Practise320_KudashovaAnna.dbo.Licium" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+предупреждение 6002: В таблице или представлении "Practise320_KudashovaAnna2.dbo.Licium" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
         <EntityType Name="Licium">
           <Key>
             <PropertyRef Name="ID" />
@@ -128,14 +121,14 @@
           <Property Name="Points" Type="float" />
         </EntityType>
         <!--Ошибки, обнаруженные при создании:
-предупреждение 6013: Первичный ключ в таблице или представлении "Practise320_KudashovaAnna.dbo.Primer6" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
+предупреждение 6013: Первичный ключ в таблице или представлении "Practise320_KudashovaAnna2.dbo.Primer6" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
         <EntityType Name="Primer6">
           <Property Name="Номер недели" Type="int" />
           <Property Name="Количество экзаменов" Type="int" />
           <Property Name="Количество студентов" Type="int" />
         </EntityType>-->
         <!--Ошибки, обнаруженные при создании:
-предупреждение 6013: Первичный ключ в таблице или представлении "Practise320_KudashovaAnna.dbo.Primer7" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
+предупреждение 6013: Первичный ключ в таблице или представлении "Practise320_KudashovaAnna2.dbo.Primer7" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
         <EntityType Name="Primer7">
           <Property Name="Continent" Type="varchar" MaxLength="50" />
           <Property Name="Square" Type="float" />
@@ -193,7 +186,7 @@
           <Property Name="ID_Chair" Type="nvarchar" MaxLength="2" />
           <Property Name="Fullname" Type="nvarchar(max)" />
           <Property Name="Position" Type="nvarchar(max)" />
-          <Property Name="Salary" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="Salary" Type="decimal" Precision="18" Scale="0" />
           <Property Name="ID_Chief" Type="int" />
           <Property Name="Login" Type="nvarchar(max)" />
           <Property Name="Password" Type="nvarchar(max)" />
@@ -232,18 +225,6 @@
             </Principal>
             <Dependent Role="Chair">
               <PropertyRef Name="ID_Faculty" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ChairBoss_Worker">
-          <End Role="Worker" Type="Self.Worker" Multiplicity="1" />
-          <End Role="ChairBoss" Type="Self.ChairBoss" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="Worker">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="ChairBoss">
-              <PropertyRef Name="ID_Worker" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -355,12 +336,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Хранилище Practise320_KudashovaAnnaModelContainer">
+        <EntityContainer Name="Хранилище Practise320_KudashovaAnna2ModelContainer">
           <EntitySet Name="Academies" EntityType="Self.Academies" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Animal_Kudashova" EntityType="Self.Animal_Kudashova" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Application" EntityType="Self.Application" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Chair" EntityType="Self.Chair" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ChairBoss" EntityType="Self.ChairBoss" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Control_Kudashova" EntityType="Self.Control_Kudashova" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Countries" EntityType="Self.Countries" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Countries_Kudashova" EntityType="Self.Countries_Kudashova" Schema="dbo" store:Type="Tables" />
@@ -395,10 +375,6 @@
           <AssociationSet Name="FK_Chair_To_Faculty" Association="Self.FK_Chair_To_Faculty">
             <End Role="Faculty" EntitySet="Faculty" />
             <End Role="Chair" EntitySet="Chair" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ChairBoss_Worker" Association="Self.FK_ChairBoss_Worker">
-            <End Role="Worker" EntitySet="Worker" />
-            <End Role="ChairBoss" EntitySet="ChairBoss" />
           </AssociationSet>
           <AssociationSet Name="FK_Discipline_To_Chair" Association="Self.FK_Discipline_To_Chair">
             <End Role="Chair" EntitySet="Chair" />
@@ -440,7 +416,7 @@
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="Practise320_KudashovaAnnaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="Practise320_KudashovaAnna2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Academies">
           <Key>
             <PropertyRef Name="ID" />
@@ -479,14 +455,6 @@
           <NavigationProperty Name="Discipline" Relationship="Self.FK_Discipline_To_Chair" FromRole="Chair" ToRole="Discipline" />
           <NavigationProperty Name="Speciality" Relationship="Self.FK_Speciality_To_Chair" FromRole="Chair" ToRole="Speciality" />
           <NavigationProperty Name="Worker" Relationship="Self.FK_Worker_To_Chair" FromRole="Chair" ToRole="Worker" />
-        </EntityType>
-        <EntityType Name="ChairBoss">
-          <Key>
-            <PropertyRef Name="ID_Worker" />
-          </Key>
-          <Property Name="ID_Worker" Type="Int32" Nullable="false" />
-          <Property Name="Standing" Type="Int32" />
-          <NavigationProperty Name="Worker" Relationship="Self.FK_ChairBoss_Worker" FromRole="ChairBoss" ToRole="Worker" />
         </EntityType>
         <EntityType Name="Control_Kudashova">
           <Key>
@@ -617,17 +585,16 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ID_Chair" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
           <Property Name="Fullname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Position" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Salary" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Salary" Type="Int32" />
           <Property Name="ID_Chief" Type="Int32" />
           <Property Name="Login" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="Chair" Relationship="Self.FK_Worker_To_Chair" FromRole="Worker" ToRole="Chair" />
-          <NavigationProperty Name="ChairBoss" Relationship="Self.FK_ChairBoss_Worker" FromRole="Worker" ToRole="ChairBoss" />
           <NavigationProperty Name="Engineer" Relationship="Self.FK_Engineer_Worker" FromRole="Worker" ToRole="Engineer" />
           <NavigationProperty Name="Exam" Relationship="Self.FK_Exam_To_Worker" FromRole="Worker" ToRole="Exam" />
           <NavigationProperty Name="Teacher" Relationship="Self.FK_Teacher_Worker" FromRole="Worker" ToRole="Teacher" />
@@ -717,18 +684,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_ChairBoss_Worker">
-          <End Role="Worker" Type="Self.Worker" Multiplicity="1" />
-          <End Role="ChairBoss" Type="Self.ChairBoss" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="Worker">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="ChairBoss">
-              <PropertyRef Name="ID_Worker" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Exam_To_Discipline">
           <End Role="Discipline" Type="Self.Discipline" Multiplicity="0..1" />
           <End Role="Exam" Type="Self.Exam" Multiplicity="*" />
@@ -801,12 +756,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Practise320_KudashovaAnnaEntities2" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="Practise320_KudashovaAnna2Entities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Academies" EntityType="Self.Academies" />
           <EntitySet Name="Animal_Kudashova" EntityType="Self.Animal_Kudashova" />
           <EntitySet Name="Application" EntityType="Self.Application" />
           <EntitySet Name="Chair" EntityType="Self.Chair" />
-          <EntitySet Name="ChairBoss" EntityType="Self.ChairBoss" />
           <EntitySet Name="Control_Kudashova" EntityType="Self.Control_Kudashova" />
           <EntitySet Name="Countries" EntityType="Self.Countries" />
           <EntitySet Name="Countries_Kudashova" EntityType="Self.Countries_Kudashova" />
@@ -846,10 +800,6 @@
             <End Role="Chair" EntitySet="Chair" />
             <End Role="Worker" EntitySet="Worker" />
           </AssociationSet>
-          <AssociationSet Name="FK_ChairBoss_Worker" Association="Self.FK_ChairBoss_Worker">
-            <End Role="Worker" EntitySet="Worker" />
-            <End Role="ChairBoss" EntitySet="ChairBoss" />
-          </AssociationSet>
           <AssociationSet Name="FK_Exam_To_Discipline" Association="Self.FK_Exam_To_Discipline">
             <End Role="Discipline" EntitySet="Discipline" />
             <End Role="Exam" EntitySet="Exam" />
@@ -880,9 +830,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище Practise320_KudashovaAnnaModelContainer" CdmEntityContainer="Practise320_KudashovaAnnaEntities2">
+        <EntityContainerMapping StorageEntityContainer="Хранилище Practise320_KudashovaAnna2ModelContainer" CdmEntityContainer="Practise320_KudashovaAnna2Entities1">
           <EntitySetMapping Name="Academies">
-            <EntityTypeMapping TypeName="Practise320_KudashovaAnnaModel.Academies">
+            <EntityTypeMapping TypeName="Practise320_KudashovaAnna2Model.Academies">
               <MappingFragment StoreEntitySet="Academies">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="FIO" ColumnName="FIO" />
@@ -893,7 +843,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Animal_Kudashova">
-            <EntityTypeMapping TypeName="Practise320_KudashovaAnnaModel.Animal_Kudashova">
+            <EntityTypeMapping TypeName="Practise320_KudashovaAnna2Model.Animal_Kudashova">
               <MappingFragment StoreEntitySet="Animal_Kudashova">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Otrad" ColumnName="Otrad" />
@@ -901,7 +851,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Application">
-            <EntityTypeMapping TypeName="Practise320_KudashovaAnnaModel.Application">
+            <EntityTypeMapping TypeName="Practise320_KudashovaAnna2Model.Application">
               <MappingFragment StoreEntitySet="Application">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="ID_Speciality" ColumnName="ID_Speciality" />
@@ -910,7 +860,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Chair">
-            <EntityTypeMapping TypeName="Practise320_KudashovaAnnaModel.Chair">
+            <EntityTypeMapping TypeName="Practise320_KudashovaAnna2Model.Chair">
               <MappingFragment StoreEntitySet="Chair">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -918,16 +868,8 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ChairBoss">
-            <EntityTypeMapping TypeName="Practise320_KudashovaAnnaModel.ChairBoss">
-              <MappingFragment StoreEntitySet="ChairBoss">
-                <ScalarProperty Name="ID_Worker" ColumnName="ID_Worker" />
-                <ScalarProperty Name="Standing" ColumnName="Standing" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Control_Kudashova">
-            <EntityTypeMapping TypeName="Practise320_KudashovaAnnaModel.Control_Kudashova">
+            <EntityTypeMapping TypeName="Practise320_KudashovaAnna2Model.Control_Kudashova">
               <MappingFragment StoreEntitySet="Control_Kudashova">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Surname" ColumnName="Surname" />
@@ -935,7 +877,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Countries">
-            <EntityTypeMapping TypeName="Practise320_KudashovaAnnaModel.Countries">
+            <EntityTypeMapping TypeName="Practise320_KudashovaAnna2Model.Countries">
               <MappingFragment StoreEntitySet="Countries">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Nazvanie" ColumnName="Nazvanie" />
@@ -947,7 +889,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Countries_Kudashova">
-            <EntityTypeMapping TypeName="Practise320_KudashovaAnnaModel.Countries_Kudashova">
+            <EntityTypeMapping TypeName="Practise320_KudashovaAnna2Model.Countries_Kudashova">
               <MappingFragment StoreEntitySet="Countries_Kudashova">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Square" ColumnName="Square" />
@@ -955,7 +897,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Discipline">
-            <EntityTypeMapping TypeName="Practise320_KudashovaAnnaModel.Discipline">
+            <EntityTypeMapping TypeName="Practise320_KudashovaAnna2Model.Discipline">
               <MappingFragment StoreEntitySet="Discipline">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Volume" ColumnName="Volume" />
@@ -965,7 +907,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Engineer">
-            <EntityTypeMapping TypeName="Practise320_KudashovaAnnaModel.Engineer">
+            <EntityTypeMapping TypeName="Practise320_KudashovaAnna2Model.Engineer">
               <MappingFragment StoreEntitySet="Engineer">
                 <ScalarProperty Name="ID_Worker" ColumnName="ID_Worker" />
                 <ScalarProperty Name="ID_Speciality" ColumnName="ID_Speciality" />
@@ -973,7 +915,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Exam">
-            <EntityTypeMapping TypeName="Practise320_KudashovaAnnaModel.Exam">
+            <EntityTypeMapping TypeName="Practise320_KudashovaAnna2Model.Exam">
               <MappingFragment StoreEntitySet="Exam">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
@@ -986,7 +928,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Faculty">
-            <EntityTypeMapping TypeName="Practise320_KudashovaAnnaModel.Faculty">
+            <EntityTypeMapping TypeName="Practise320_KudashovaAnna2Model.Faculty">
               <MappingFragment StoreEntitySet="Faculty">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -994,7 +936,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Flowers_Kudashova">
-            <EntityTypeMapping TypeName="Practise320_KudashovaAnnaModel.Flowers_Kudashova">
+            <EntityTypeMapping TypeName="Practise320_KudashovaAnna2Model.Flowers_Kudashova">
               <MappingFragment StoreEntitySet="Flowers_Kudashova">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Class" ColumnName="Class" />
@@ -1002,7 +944,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Speciality">
-            <EntityTypeMapping TypeName="Practise320_KudashovaAnnaModel.Speciality">
+            <EntityTypeMapping TypeName="Practise320_KudashovaAnna2Model.Speciality">
               <MappingFragment StoreEntitySet="Speciality">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -1011,7 +953,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Student">
-            <EntityTypeMapping TypeName="Practise320_KudashovaAnnaModel.Student">
+            <EntityTypeMapping TypeName="Practise320_KudashovaAnna2Model.Student">
               <MappingFragment StoreEntitySet="Student">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="ID_Speciality" ColumnName="ID_Speciality" />
@@ -1020,7 +962,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Student10">
-            <EntityTypeMapping TypeName="Practise320_KudashovaAnnaModel.Student10">
+            <EntityTypeMapping TypeName="Practise320_KudashovaAnna2Model.Student10">
               <MappingFragment StoreEntitySet="Student10">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Surname" ColumnName="Surname" />
@@ -1031,7 +973,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="Practise320_KudashovaAnnaModel.sysdiagrams">
+            <EntityTypeMapping TypeName="Practise320_KudashovaAnna2Model.sysdiagrams">
               <MappingFragment StoreEntitySet="sysdiagrams">
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="principal_id" ColumnName="principal_id" />
@@ -1042,7 +984,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Teacher">
-            <EntityTypeMapping TypeName="Practise320_KudashovaAnnaModel.Teacher">
+            <EntityTypeMapping TypeName="Practise320_KudashovaAnna2Model.Teacher">
               <MappingFragment StoreEntitySet="Teacher">
                 <ScalarProperty Name="ID_Worker" ColumnName="ID_Worker" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
@@ -1051,7 +993,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Worker">
-            <EntityTypeMapping TypeName="Practise320_KudashovaAnnaModel.Worker">
+            <EntityTypeMapping TypeName="Practise320_KudashovaAnna2Model.Worker">
               <MappingFragment StoreEntitySet="Worker">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="ID_Chair" ColumnName="ID_Chair" />
@@ -1066,7 +1008,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Licium">
-            <EntityTypeMapping TypeName="Practise320_KudashovaAnnaModel.Licium">
+            <EntityTypeMapping TypeName="Practise320_KudashovaAnna2Model.Licium">
               <MappingFragment StoreEntitySet="Licium">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Surname" ColumnName="Surname" />

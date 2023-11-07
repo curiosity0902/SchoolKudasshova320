@@ -4,40 +4,38 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="896a6fda10d4459eacb441c31b87e754" Name="Diagram1">
-        <EntityTypeShape EntityType="Practise320_KudashovaAnnaModel.Academies" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Practise320_KudashovaAnnaModel.Animal_Kudashova" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Practise320_KudashovaAnnaModel.Application" Width="1.5" PointX="7.5" PointY="2.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="Practise320_KudashovaAnnaModel.Chair" Width="1.5" PointX="3" PointY="8.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="Practise320_KudashovaAnnaModel.ChairBoss" Width="1.5" PointX="7.5" PointY="9.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Practise320_KudashovaAnnaModel.Control_Kudashova" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Practise320_KudashovaAnnaModel.Countries" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Practise320_KudashovaAnnaModel.Countries_Kudashova" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Practise320_KudashovaAnnaModel.Discipline" Width="1.5" PointX="5.25" PointY="3.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Practise320_KudashovaAnnaModel.Engineer" Width="1.5" PointX="7.5" PointY="11.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="Practise320_KudashovaAnnaModel.Exam" Width="1.5" PointX="9.75" PointY="7.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="Practise320_KudashovaAnnaModel.Faculty" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Practise320_KudashovaAnnaModel.Flowers_Kudashova" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Practise320_KudashovaAnnaModel.Speciality" Width="1.5" PointX="5.25" PointY="6.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="Practise320_KudashovaAnnaModel.Student" Width="1.5" PointX="7.5" PointY="6.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="Practise320_KudashovaAnnaModel.Student10" Width="1.5" PointX="9.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Practise320_KudashovaAnnaModel.sysdiagrams" Width="1.5" PointX="11.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Practise320_KudashovaAnnaModel.Teacher" Width="1.5" PointX="7.5" PointY="14" IsExpanded="true" />
-        <EntityTypeShape EntityType="Practise320_KudashovaAnnaModel.Worker" Width="1.5" PointX="5.25" PointY="10.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Practise320_KudashovaAnnaModel.Licium" Width="1.5" PointX="0.75" PointY="11.75" IsExpanded="true" />
-        <AssociationConnector Association="Practise320_KudashovaAnnaModel.FK_Application_To_Discipline" ManuallyRouted="false" />
-        <AssociationConnector Association="Practise320_KudashovaAnnaModel.FK_Application_To_Speciality" ManuallyRouted="false" />
-        <AssociationConnector Association="Practise320_KudashovaAnnaModel.FK_Chair_To_Faculty" ManuallyRouted="false" />
-        <AssociationConnector Association="Practise320_KudashovaAnnaModel.FK_Discipline_To_Chair" ManuallyRouted="false" />
-        <AssociationConnector Association="Practise320_KudashovaAnnaModel.FK_Speciality_To_Chair" ManuallyRouted="false" />
-        <AssociationConnector Association="Practise320_KudashovaAnnaModel.FK_Worker_To_Chair" ManuallyRouted="false" />
-        <AssociationConnector Association="Practise320_KudashovaAnnaModel.FK_ChairBoss_Worker" ManuallyRouted="false" />
-        <AssociationConnector Association="Practise320_KudashovaAnnaModel.FK_Exam_To_Discipline" ManuallyRouted="false" />
-        <AssociationConnector Association="Practise320_KudashovaAnnaModel.FK_Engineer_Worker" ManuallyRouted="false" />
-        <AssociationConnector Association="Practise320_KudashovaAnnaModel.FK_Exam_To_Student" ManuallyRouted="false" />
-        <AssociationConnector Association="Practise320_KudashovaAnnaModel.FK_Exam_To_Worker" ManuallyRouted="false" />
-        <AssociationConnector Association="Practise320_KudashovaAnnaModel.FK_Student_To_Speciality" ManuallyRouted="false" />
-        <AssociationConnector Association="Practise320_KudashovaAnnaModel.FK_Teacher_Worker" ManuallyRouted="false" />
+      <Diagram DiagramId="9c3bdb1db53641659fa99c2b2a236a6a" Name="Diagram1">
+        <EntityTypeShape EntityType="Practise320_KudashovaAnna2Model.Academies" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Practise320_KudashovaAnna2Model.Animal_Kudashova" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Practise320_KudashovaAnna2Model.Application" Width="1.5" PointX="7.5" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Practise320_KudashovaAnna2Model.Chair" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="Practise320_KudashovaAnna2Model.Control_Kudashova" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Practise320_KudashovaAnna2Model.Countries" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Practise320_KudashovaAnna2Model.Countries_Kudashova" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Practise320_KudashovaAnna2Model.Discipline" Width="1.5" PointX="5.25" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Practise320_KudashovaAnna2Model.Engineer" Width="1.5" PointX="7.5" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Practise320_KudashovaAnna2Model.Exam" Width="1.5" PointX="9.75" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Practise320_KudashovaAnna2Model.Faculty" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Practise320_KudashovaAnna2Model.Flowers_Kudashova" Width="1.5" PointX="9.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Practise320_KudashovaAnna2Model.Speciality" Width="1.5" PointX="5.25" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Practise320_KudashovaAnna2Model.Student" Width="1.5" PointX="7.5" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Practise320_KudashovaAnna2Model.Student10" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Practise320_KudashovaAnna2Model.sysdiagrams" Width="1.5" PointX="9.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Practise320_KudashovaAnna2Model.Teacher" Width="1.5" PointX="7.5" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Practise320_KudashovaAnna2Model.Worker" Width="1.5" PointX="5.25" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Practise320_KudashovaAnna2Model.Licium" Width="1.5" PointX="11.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="Practise320_KudashovaAnna2Model.FK_Application_To_Discipline" ManuallyRouted="false" />
+        <AssociationConnector Association="Practise320_KudashovaAnna2Model.FK_Application_To_Speciality" ManuallyRouted="false" />
+        <AssociationConnector Association="Practise320_KudashovaAnna2Model.FK_Chair_To_Faculty" ManuallyRouted="false" />
+        <AssociationConnector Association="Practise320_KudashovaAnna2Model.FK_Discipline_To_Chair" ManuallyRouted="false" />
+        <AssociationConnector Association="Practise320_KudashovaAnna2Model.FK_Speciality_To_Chair" ManuallyRouted="false" />
+        <AssociationConnector Association="Practise320_KudashovaAnna2Model.FK_Worker_To_Chair" ManuallyRouted="false" />
+        <AssociationConnector Association="Practise320_KudashovaAnna2Model.FK_Exam_To_Discipline" ManuallyRouted="false" />
+        <AssociationConnector Association="Practise320_KudashovaAnna2Model.FK_Engineer_Worker" ManuallyRouted="false" />
+        <AssociationConnector Association="Practise320_KudashovaAnna2Model.FK_Exam_To_Student" ManuallyRouted="false" />
+        <AssociationConnector Association="Practise320_KudashovaAnna2Model.FK_Exam_To_Worker" ManuallyRouted="false" />
+        <AssociationConnector Association="Practise320_KudashovaAnna2Model.FK_Student_To_Speciality" ManuallyRouted="false" />
+        <AssociationConnector Association="Practise320_KudashovaAnna2Model.FK_Teacher_Worker" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

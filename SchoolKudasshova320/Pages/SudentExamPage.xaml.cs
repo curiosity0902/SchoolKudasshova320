@@ -29,6 +29,7 @@ namespace SchoolKudasshova320.Pages
         {
             InitializeComponent();
             contextExam = exam;
+          
             InitializeDataInPage();
             this.DataContext = this;
             //StudentExamLv.ItemsSource = new List<Student>(DBConnection.practise320_KudashovaAnnaEntities.Student.ToList());
@@ -36,7 +37,8 @@ namespace SchoolKudasshova320.Pages
         private void InitializeDataInPage()
         {
             CBStudents.ItemsSource = DBConnection.practise320_KudashovaAnnaEntities.Student.ToList();
-            TBDisp.Text = DBConnection.practise320_KudashovaAnnaEntities.Discipline.ToString();
+            
+            //TBDisp.Text = DBConnection.practise320_KudashovaAnnaEntities.Discipline;
             students = new List<Student>(DBConnection.practise320_KudashovaAnnaEntities.Student).ToList();
             disciplines = new List<Discipline>(DBConnection.practise320_KudashovaAnnaEntities.Discipline.ToList());
             exams = new List<Exam>(DBConnection.practise320_KudashovaAnnaEntities.Exam.Where(x => x.Date == contextExam.Date && x.Discipline.ID == contextExam.ID_Discipline).ToList());

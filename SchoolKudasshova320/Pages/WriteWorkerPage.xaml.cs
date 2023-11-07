@@ -91,5 +91,10 @@ namespace SchoolKudasshova320.Pages
         {
             NavigationService.GoBack();
         }
+
+        private void dELBTN_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -1,4 +1,4 @@
-﻿// Создание кода T4 для модели "C:\Users\202108\Desktop\SchoolKudasshova320 (5)\SchoolKudasshova320 (3)\SchoolKudasshova320 (2)\SchoolKudasshova320\SchoolKudasshova320\SchoolKudasshova320\DB\Model1.edmx" включено. 
+﻿// Создание кода T4 для модели "C:\Users\Анна\Downloads\SchoolKudasshova320 (5) (1)\SchoolKudasshova320 (5)\SchoolKudasshova320 (3)\SchoolKudasshova320 (2)\SchoolKudasshova320\SchoolKudasshova320\SchoolKudasshova320\DB\Model1.edmx" включено. 
 // Чтобы включить формирование кода прежних версий, измените значение свойства "Стратегия создания кода" конструктора
 // на "Legacy ObjectContext". Это свойство доступно в окне "Свойства", если модель
 // открыта в конструкторе.

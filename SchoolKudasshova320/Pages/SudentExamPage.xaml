@@ -39,7 +39,7 @@
                     Grid.Column="3"
                     Grid.ColumnSpan="2"
                     Grid.Row="0"
-                    Text="{Binding Discipline.Name}"
+                    Text="{Binding exams.Discipline.Name}"
                     />
         
         <ListView Grid.Column="1"
@@ -61,7 +61,7 @@
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>-->
 
-                        <GridViewColumn Header ="ID студента" Width="505">
+                        <GridViewColumn Header ="ID студента" Width="405">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel>
@@ -71,7 +71,7 @@
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
                         
-                        <GridViewColumn Header ="Студент" Width="415">
+                        <GridViewColumn Header ="Студент" Width="355">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel>
@@ -81,7 +81,7 @@
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
 
-                        <GridViewColumn Header ="Оценка" Width="505">
+                        <GridViewColumn Header ="Оценка" Width="455">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel>

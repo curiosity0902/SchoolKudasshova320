@@ -62,16 +62,7 @@ namespace SchoolKudasshova320.Pages
 
         }
 
-        private void dELBTN_Click(object sender, RoutedEventArgs e)
-        {
-            if (EngenerLv.SelectedItem is Exam exam)
-            {
-                DBConnection.practise320_KudashovaAnnaEntities.Exam.Remove(exam);
-                DBConnection.practise320_KudashovaAnnaEntities.SaveChanges();
-                InitializeDataInPage();
-            }
-        }
-
+  
         //private void DeleteBT_Click(object sender, RoutedEventArgs e)
         //{
         //    if (EngenerLv.SelectedItem is Exam exam)

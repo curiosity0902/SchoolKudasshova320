@@ -43,7 +43,7 @@
             <ListView.View>
                 <GridView>
                     <GridView.Columns>
-                        <GridViewColumn Header ="Кафедра " Width="340">
+                        <GridViewColumn Header ="Кафедра " Width="240">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel>
@@ -53,11 +53,11 @@
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
 
-                        <GridViewColumn Header ="Дисциплина " Width="340">
+                        <GridViewColumn Header ="Дисциплина " Width="240">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel>
-                                        <TextBlock Text="{Binding discipline.Name}"/>
+                                        <TextBlock Text="{Binding Discipline.Name}"/>
                                     </StackPanel>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>

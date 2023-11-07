@@ -13,10 +13,10 @@ namespace SchoolKudasshova320.DB
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Practise320_KudashovaAnnaEntities2 : DbContext
+    public partial class Practise320_KudashovaAnna2Entities1 : DbContext
     {
-        public Practise320_KudashovaAnnaEntities2()
-            : base("name=Practise320_KudashovaAnnaEntities2")
+        public Practise320_KudashovaAnna2Entities1()
+            : base("name=Practise320_KudashovaAnna2Entities1")
         {
         }
     
@@ -29,7 +29,6 @@ namespace SchoolKudasshova320.DB
         public virtual DbSet<Animal_Kudashova> Animal_Kudashova { get; set; }
         public virtual DbSet<Application> Application { get; set; }
         public virtual DbSet<Chair> Chair { get; set; }
-        public virtual DbSet<ChairBoss> ChairBoss { get; set; }
         public virtual DbSet<Control_Kudashova> Control_Kudashova { get; set; }
         public virtual DbSet<Countries> Countries { get; set; }
         public virtual DbSet<Countries_Kudashova> Countries_Kudashova { get; set; }

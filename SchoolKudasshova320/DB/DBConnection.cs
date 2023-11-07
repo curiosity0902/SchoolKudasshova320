@@ -8,7 +8,7 @@ namespace SchoolKudasshova320.DB
 {
     internal class DBConnection
     {
-        public static Practise320_KudashovaAnnaEntities2 practise320_KudashovaAnnaEntities = new Practise320_KudashovaAnnaEntities2();
+        public static Practise320_KudashovaAnna2Entities1 practise320_KudashovaAnnaEntities = new Practise320_KudashovaAnna2Entities1();
         public static Worker loginedUser;
 
     }

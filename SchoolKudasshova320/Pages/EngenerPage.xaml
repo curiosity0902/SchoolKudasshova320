@@ -97,6 +97,15 @@
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
+                        <GridViewColumn Header ="Фото" Width="305">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <Image Source="{Binding Photo}"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
                     </GridView.Columns>
                 </GridView>
             </ListView.View>
@@ -119,13 +128,7 @@
                 Width="200"
                Content="Добавить" BorderBrush="Black" Click="ADDBT_Click_1" />
 
-        <Button x:Name="dELBTN"      
-   Content="DELETE"
-   FontSize="20"
-   Grid.Column="1"
-   Grid.Row="7"
-   Grid.ColumnSpan="3"
-   Margin="10" Click="dELBTN_Click"/>
+
 
 
     </Grid>

@@ -65,7 +65,7 @@ namespace SchoolKudasshova320.Pages
                 worker.Login = LoginTB.Text.Trim();
                 worker.Password = PasswordTB.Text.Trim();
                 worker.ID_Chair = t.ID;
-                worker.Salary = decimal.Parse(SalaryTB.Text);
+                //worker.Salary = decimal.Parse(SalaryTB.Text);
 
                 worker.Position = PositionCB.Text.Trim();
 
