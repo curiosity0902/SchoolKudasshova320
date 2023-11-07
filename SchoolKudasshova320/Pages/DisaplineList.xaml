@@ -41,7 +41,7 @@
             <ListView.View>
                 <GridView>
                     <GridView.Columns>
-                        <GridViewColumn Header ="Номер дисциплины" Width="440">
+                        <GridViewColumn Header ="Номер дисциплины" Width="340">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel>
@@ -51,7 +51,7 @@
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
 
-                        <GridViewColumn Header ="Объем часов" Width="415">
+                        <GridViewColumn Header ="Объем часов" Width="315">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel>

@@ -81,7 +81,7 @@ namespace SchoolKudasshova320.Pages
                 var d = CBDisp.SelectedItem as Discipline;
                 disc.Name = d.Name;
                 disc.Volume = Convert.ToInt32(TBVolume.Text);
-                disc.ID = contextChair.ID);
+                //disc.ID = contextChair.ID);
                 
                 DBConnection.practise320_KudashovaAnnaEntities.Discipline.Add(disc);
                 DBConnection.practise320_KudashovaAnnaEntities.SaveChanges();
@@ -116,7 +116,11 @@ namespace SchoolKudasshova320.Pages
 
         private void ChangeBTN_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new AddChairPage());
+            if (AddDepartmentLv.SelectedItem is Discipline discipline)
+            {
+                AddDepartmentLv.SelectedItem = null;
+                NavigationService.Navigate(new AddChairPage(discipline));
+            }
         }
     }
 }

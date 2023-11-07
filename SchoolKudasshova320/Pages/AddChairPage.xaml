@@ -45,30 +45,27 @@
                    FontSize="16"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"
-                   Text="Фамилия"
-                   x:Name="SurnameTBL"
-                  
+                   Text="Дисциплина"
                    />
-
-        <TextBox x:Name="SurnameTB"
-                 Grid.Row="2"
-                 Grid.Column="6"
-                 FontSize="16"
-                 VerticalAlignment="Center"
-                 />
+        <ComboBox x:Name="DiscCB" Grid.Column="6" Grid.Row="3"
+                  Height="25"
+                  DisplayMemberPath="Name"
+                  ItemsSource="{Binding disc.Discipline.Name}"
+                  />
 
         <TextBlock Grid.Row="4"
                    Grid.Column="4"
                    FontSize="16"
                    HorizontalAlignment="Center"
-                   Text="ID"
+                   Text="Объем часов"
                    VerticalAlignment="Center"/>
 
-        <TextBox x:Name="IDTB"
+        <TextBox x:Name="VolumeChairTB"
                  Grid.Row="4"
                  Grid.Column="6"
                  FontSize="16"
                  VerticalAlignment="Center"
+                 Text="{Binding disc.Volume}"
                  />
 
         <Button x:Name="SaveChageBtn"
@@ -76,32 +73,7 @@
                 Grid.Column="4"
                 Grid.Row="7"
                 Margin="0 10" Click="SaveChageBtn_Click"/>
-        <TextBlock Grid.Row="3"
-                   Grid.Column="4"
-                   FontSize="16"
-                   HorizontalAlignment="Center"
-                   VerticalAlignment="Center"
-                   Text="Факультет"/>
-
-        <ComboBox x:Name="FacultyCB" Grid.Column="6" Grid.Row="3"
-                  Height="25"
-                  DisplayMemberPath="Name"
-                  />
-
-
-        <TextBlock Grid.Row="5"
-                   Grid.Column="4"
-                   FontSize="16"
-                   HorizontalAlignment="Center"
-                   VerticalAlignment="Center"
-                   Text="Должность"/>
-
-        <TextBox x:Name="PositionCB"
-                 Grid.Row="5"
-                 Grid.Column="6"
-                 FontSize="16"
-                 VerticalAlignment="Center"
-                 />
+  
 
         <Button x:Name="BackBTN"      
    Content="ВЕРНУТЬСЯ НА ГЛАВНУЮ"

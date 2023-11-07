@@ -29,7 +29,8 @@ namespace SchoolKudasshova320.Pages
         {
             InitializeComponent();
             contextExam = exam;
-          
+            TB_DateE.Text = Convert.ToString(contextExam.Date);
+            TB_NameE.Text = Convert.ToString(contextExam.Discipline.Name);
             InitializeDataInPage();
             this.DataContext = this;
             //StudentExamLv.ItemsSource = new List<Student>(DBConnection.practise320_KudashovaAnnaEntities.Student.ToList());
@@ -52,7 +53,11 @@ namespace SchoolKudasshova320.Pages
         {
             NavigationService.GoBack();
         }
-
+        private void Refresh() //Обновление листа
+        {
+            StudentExamLv.ItemsSource = DBConnection.practise320_KudashovaAnnaEntities.Exam.
+                Where(i => i.Date == contextExam.Date && i.Discipline.ID == contextExam.ID_Discipline).ToList();
+        }
         private void BAddStudent_Click(object sender, RoutedEventArgs e)
         {
              string mark = "2 ";
@@ -72,6 +77,7 @@ namespace SchoolKudasshova320.Pages
                 }
                 DBConnection.practise320_KudashovaAnnaEntities.Exam.Add(exam);
                 DBConnection.practise320_KudashovaAnnaEntities.SaveChanges();
+                Refresh();
                 InitializeDataInPage();
 
             }
@@ -84,6 +90,7 @@ namespace SchoolKudasshova320.Pages
                 DBConnection.practise320_KudashovaAnnaEntities.Exam.Remove(exam);
                 DBConnection.practise320_KudashovaAnnaEntities.SaveChanges();
                 InitializeDataInPage();
+                Refresh();
             }
         }
     }

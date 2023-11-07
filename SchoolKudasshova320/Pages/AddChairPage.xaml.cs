@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Data.Common;
 using System.Linq;
 using System.Text;
@@ -23,32 +24,56 @@ namespace SchoolKudasshova320.Pages
     /// </summary>
     public partial class AddChairPage : Page
     {
-        public static List<Chair> chairs { get; set; }
+        public static List<Discipline> disciplines { get; set; }
         public static List<Worker> workers { get; set; }
-        public static List<Faculty> faculties { get; set; }
+        public static List<Chair> chairs { get; set; }
+
+        public static Discipline disc { get; set; }
+        Discipline contextdisc;
 
         public static Worker loggedUser;
-        public static Chair chair1 = new Chair();
-        public AddChairPage()
+
+        public AddChairPage(Discipline discipline)
         {
             InitializeComponent();
             loggedUser = DBConnection.loginedUser;
-
-            faculties = new List<Faculty>(DBConnection.practise320_KudashovaAnnaEntities.Faculty.ToList());
+            contextdisc = discipline;
+            disc = discipline;
+            DiscCB.ItemsSource = DBConnection.practise320_KudashovaAnnaEntities.Discipline.ToList();
             workers = new List<Worker>(DBConnection.practise320_KudashovaAnnaEntities.Worker.ToList());
-            chairs = DBConnection.practise320_KudashovaAnnaEntities.Chair.Where(x => x.ID == DBConnection.loginedUser.ID_Chair).ToList();
+            disciplines = new List <Discipline> (DBConnection.practise320_KudashovaAnnaEntities.Discipline.ToList());
             this.DataContext = this;
             //FacultyCB.ItemsSource = DbConnection.practise320_KudashovaAnnaEntities.Faculty.ToList();
         }
 
         private void SaveChageBtn_Click(object sender, RoutedEventArgs e)
         {
+            var error = string.Empty;
+            var validationContext = new ValidationContext(contextdisc);
+            var results = new List<System.ComponentModel.DataAnnotations.ValidationResult>();
 
+            if (Validator.TryValidateObject(contextdisc, validationContext, results, true))
+            {
+                foreach (var result in results)
+                {
+                    error += $"{result.ErrorMessage}\n";
+                }
+            }
+            if (!string.IsNullOrWhiteSpace(error))
+            {
+                MessageBox.Show(error);
+                return;
+            }
+
+            if (contextdisc.ID == 0)
+                DBConnection.practise320_KudashovaAnnaEntities.Discipline.Add(contextdisc);
+            DBConnection.practise320_KudashovaAnnaEntities.SaveChanges();
+            NavigationService.GoBack();
         }
 
         private void BackBTN_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.GoBack();
         }
     }
 }
