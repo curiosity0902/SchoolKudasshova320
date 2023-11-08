@@ -29,7 +29,7 @@ namespace SchoolKudasshova320.Pages
             chairs = new List<Chair>(DBConnection.practise320_KudashovaAnnaEntities.Chair.ToList());
             workers = new List<Worker>(DBConnection.practise320_KudashovaAnnaEntities.Worker.ToList());
             EngenerLv.ItemsSource = new List<Worker>(DBConnection.practise320_KudashovaAnnaEntities.Worker.ToList());
-
+            Refresh();
             this.DataContext = this;
           
         }
@@ -40,7 +40,10 @@ namespace SchoolKudasshova320.Pages
             workers = new List<Worker>(DBConnection.practise320_KudashovaAnnaEntities.Worker.ToList());
             EngenerLv.ItemsSource = new List<Worker>(DBConnection.practise320_KudashovaAnnaEntities.Worker.ToList());
         }
-
+        private void Refresh() //Обновление листа
+        {
+            EngenerLv.ItemsSource = DBConnection.practise320_KudashovaAnnaEntities.Worker.ToList();
+        }
         private void ExitBT_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();
@@ -59,6 +62,7 @@ namespace SchoolKudasshova320.Pages
         private void ADDBT_Click_1(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new WorkersPage());
+            Refresh();
 
         }
 

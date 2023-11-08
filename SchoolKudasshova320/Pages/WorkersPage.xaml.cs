@@ -74,7 +74,7 @@ namespace SchoolKudasshova320.Pages
                 DBConnection.practise320_KudashovaAnnaEntities.Worker.Add(worker);
                 DBConnection.practise320_KudashovaAnnaEntities.SaveChanges();
 
-
+                NavigationService.Navigate(new EngenerPage());
             }
 
         }

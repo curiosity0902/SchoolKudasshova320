@@ -93,10 +93,6 @@ namespace SchoolKudasshova320.Pages
             NavigationService.GoBack();
         }
 
-        public void Refresh()
-        {
-            //EngenerLv.ItemsSource = DBConnection.practise320_KudashovaAnnaEntities.Worker.ToList();
-        }
         private void dELBTN_Click(object sender, RoutedEventArgs e)
         {
             if (work != null)
@@ -105,8 +101,9 @@ namespace SchoolKudasshova320.Pages
                 DBConnection.practise320_KudashovaAnnaEntities.Worker.Remove(work);
                 //DBCORemove(work);
                 DBConnection.practise320_KudashovaAnnaEntities.SaveChanges();
-                Refresh();
+                
                 InitializeDataInPage();
+                NavigationService.Navigate(new EngenerPage());
             }
         }
     }
