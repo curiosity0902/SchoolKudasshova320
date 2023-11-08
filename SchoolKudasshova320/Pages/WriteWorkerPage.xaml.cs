@@ -40,6 +40,7 @@ namespace SchoolKudasshova320.Pages
 
         private void InitializeDataInPage()
         {
+           
             ChairCB.ItemsSource = DBConnection.practise320_KudashovaAnnaEntities.Chair.ToList();
             //TBDisp.Text = DBConnection.practise320_KudashovaAnnaEntities.Discipline.oString();
             workers = new List<Worker>(DBConnection.practise320_KudashovaAnnaEntities.Worker).ToList();
@@ -92,9 +93,21 @@ namespace SchoolKudasshova320.Pages
             NavigationService.GoBack();
         }
 
+        public void Refresh()
+        {
+            //EngenerLv.ItemsSource = DBConnection.practise320_KudashovaAnnaEntities.Worker.ToList();
+        }
         private void dELBTN_Click(object sender, RoutedEventArgs e)
         {
+            if (work != null)
 
+            {
+                DBConnection.practise320_KudashovaAnnaEntities.Worker.Remove(work);
+                //DBCORemove(work);
+                DBConnection.practise320_KudashovaAnnaEntities.SaveChanges();
+                Refresh();
+                InitializeDataInPage();
+            }
         }
     }
 }

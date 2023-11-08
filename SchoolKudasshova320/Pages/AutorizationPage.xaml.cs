@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.Eventing.Reader;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Drawing;
 
 namespace SchoolKudasshova320.Pages
 {
@@ -49,6 +51,31 @@ namespace SchoolKudasshova320.Pages
         private void GostBtn_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new DisaplineList());
+        }
+
+        private void CreateQrBtn_Click(object sender, RoutedEventArgs e)
+        {
+            // Ссылка на XL таблицу
+            string soucer_xl = "https://docs.google.com/spreadsheets/d/1yGppfv2T5KPtFWzNq25RjlLyerbe-OjY_jnT04ON9iI/edit#gid=0";
+            // Создание переменной библиотеки QRCoder
+            QRCoder.QRCodeGenerator qr = new QRCoder.QRCodeGenerator();
+            // Присваеваем значиения
+            QRCoder.QRCodeData data = qr.CreateQrCode(soucer_xl, QRCoder.QRCodeGenerator.ECCLevel.L);
+            // переводим в Qr
+            QRCoder.QRCode code = new QRCoder.QRCode(data);
+            Bitmap bitmap = code.GetGraphic(100);
+            /// Создание картинки
+            using (MemoryStream memory = new MemoryStream())
+            {
+                bitmap.Save(memory, System.Drawing.Imaging.ImageFormat.Bmp);
+                memory.Position = 0;
+                BitmapImage bitmapimage = new BitmapImage();
+                bitmapimage.BeginInit();
+                bitmapimage.StreamSource = memory;
+                bitmapimage.CacheOption = BitmapCacheOption.OnLoad;
+                bitmapimage.EndInit();
+                imageQr.Source = bitmapimage;
+            }
         }
     }
 }

@@ -99,6 +99,16 @@ Grid.Row="6"
 Grid.RowSpan="2"
 Height="50"
 Click="GostBtn_Click" Margin="10"/>
+            <Button x:Name="CreateQrBtn" 
+                Content="Создать QR" 
+                Width="150" Height="45" 
+                Grid.Column="6" 
+                Grid.Row="6" 
+                Grid.RowSpan="2"
+                Click="CreateQrBtn_Click"
+                >
+            </Button>
+            <Image x:Name="imageQr" Height="200" Width="200" Grid.Column="0" Grid.Row="2" Grid.RowSpan="4" Grid.ColumnSpan="4"></Image>
         </Grid>
     </Grid>
 </Page>

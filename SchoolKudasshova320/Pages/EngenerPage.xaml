@@ -38,8 +38,8 @@
        VerticalAlignment="Center"
        Height="45"
         Width="200"
-       Content="Удалить студента" BorderBrush="Black" Click="DeleteBT_Click" >
-        </Button>-->
+       Content="Удалить" BorderBrush="Black" Click="DeleteBT_Click" >-->
+        <!--</Button>-->
         <ListView Grid.Column="1"
     x:Name="EngenerLv"
     Grid.ColumnSpan="5"
@@ -49,7 +49,7 @@
             <ListView.View>
                 <GridView>
                     <GridView.Columns>
-                        <GridViewColumn Header ="ID" Width="250">
+                        <GridViewColumn Header ="ID" Width="150">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel>
@@ -59,7 +59,7 @@
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
 
-                        <GridViewColumn Header ="Фамилия" Width="315">
+                        <GridViewColumn Header ="Фамилия" Width="215">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel>
@@ -70,7 +70,7 @@
                         </GridViewColumn>
 
 
-                        <GridViewColumn Header ="Оклад" Width="305">
+                        <GridViewColumn Header ="Оклад" Width="205">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel>
@@ -88,7 +88,7 @@
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header ="Позиция" Width="305">
+                        <GridViewColumn Header ="Позиция" Width="205">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel>
@@ -97,7 +97,7 @@
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header ="Фото" Width="305">
+                        <GridViewColumn Header ="Фото" Width="205">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel>

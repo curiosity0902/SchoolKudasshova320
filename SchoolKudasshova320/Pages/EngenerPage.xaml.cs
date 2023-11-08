@@ -62,14 +62,14 @@ namespace SchoolKudasshova320.Pages
 
         }
 
-  
+
         //private void DeleteBT_Click(object sender, RoutedEventArgs e)
         //{
-        //    if (EngenerLv.SelectedItem is Exam exam)
-        //    {
-        //        DBConnection.practise320_KudashovaAnnaEntities.Exam.Remove(exam);
+        //        if (EngenerLv.SelectedItem != null)
+        //        {
+        //        EngenerLv.Items.Remove(EngenerLv.SelectedItem);
         //        DBConnection.practise320_KudashovaAnnaEntities.SaveChanges();
-        //    }
+        //        }
         //}
 
 
